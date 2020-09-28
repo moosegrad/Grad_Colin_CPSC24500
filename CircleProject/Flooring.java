@@ -1,8 +1,7 @@
-/*
-Colin Grad
-09-15-2020
-Flooring Project
-*/
+
+//Colin Grad
+//09-15-2020
+//Flooring Project
 //import 
 	//no imports
 //main class

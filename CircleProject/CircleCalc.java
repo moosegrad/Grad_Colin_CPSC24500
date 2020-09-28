@@ -40,5 +40,6 @@ public class CircleCalc{
 		System.out.println("The Circumfrence of the Circle is: "+ circum_Circle + "\n");//print Circumfrence
 		System.out.println("The area of the cicle is: " + areaCircle +"\n"); //print the area
 		//end program 
+		
 	}
 }//end main
