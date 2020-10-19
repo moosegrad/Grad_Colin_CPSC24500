@@ -60,11 +60,7 @@ public class BaseballStandings{
 		for(String standing : standings){
 			parts = standing.split("\t");
 			avg = getAvg(standing);
-			//gamesB = gamesBehind(standings);
 			System.out.printf("%-15s%-8s%-8s%6.2f         \n ", parts[0], parts[1], parts[2], avg);
-			//System.out.println(parts[1]);
-			//System.out.println(parts[2]);
-			
 		}//end for 
 //		System.out.println(standings);
 	}//end displayStats
@@ -207,7 +203,7 @@ public class BaseballStandings{
 				} else if(choice == 6){
 					displayStats(nlcentral);
 				} else if(choice == 7){
-					displayStats2(overall);
+					displayStats(overall);
 				}//end else and if loop
 			} while (choice != 8);
 		}//end if

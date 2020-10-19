@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<item key="org.eclipse.jdt.ui.last.external.project" value="/Users/colingrad/Documents/GitHub/CPSC24500_Grad_Colin_Desktop/ClassWork/WorkSpace"/>
 	<section name="org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart">
 		<item key="group_libraries" value="true"/>
 		<item key="layout" value="2"/>
@@ -38,5 +39,12 @@
 		<item key="destdir" value="/Users/colingrad/Documents/GitHub/Grad_Colin_CPSC24500"/>
 		<section name="projects">
 		</section>
+	</section>
+	<section name="OptionalMessageDialog.hide.">
+		<item key="org.eclipse.jdt.ui.typecomment.deprecated" value="true"/>
+	</section>
+	<section name="NewClassWizardPage">
+		<item key="create_constructor" value="false"/>
+		<item key="create_unimplemented" value="true"/>
 	</section>
 </section>
