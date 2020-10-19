@@ -165,7 +165,7 @@ public class CovidPlotter {
 						Plot2DPanel plot = new Plot2DPanel(); // will contain the countries curves
 						plot.setAxisLabels("Day", "Deaths");
 						plot.addLegend("SOUTH");
-						BaseLabel title = new BaseLabel("Cumulitive Deaths",Color.RED,0.5,1.1);
+						BaseLabel title = new BaseLabel("Daily Deaths",Color.RED,0.5,1.1);
 						plot.addPlotable(title);
 						parts = names.split(",");
 						// add line plots for each person the user named
