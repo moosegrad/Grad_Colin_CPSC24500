@@ -24,9 +24,9 @@ public class CovidPlotter {
 	 * Werlcome fucntion
 	 */
 	public static void Intro(){
-		System.out.println("*********************************************************");
-		System.out.println("*      International Covid-19 Mortality Rates    *");
-		System.out.println("*********************************************************");
+		System.out.println("****************************************************");
+		System.out.println("*      International Covid-19 Mortality Rates      *");
+		System.out.println("****************************************************");
 	}
     public static LinkedHashMap<String,double[]> readData(Scanner fsc) {
         // declare the data structure I'll return
