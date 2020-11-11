@@ -229,8 +229,7 @@ class PkmMR extends JFrame {
 					dPanel.setPMouth(txtSize7.getText());
 					repaint();
 				}
-			}
-			);
+			});
 			
 			pnSouth.add(btnChange);
 			c.add(pnSouth,BorderLayout.SOUTH);
