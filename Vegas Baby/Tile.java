@@ -45,8 +45,6 @@ public class Tile{
 		Random rnd = new Random();//rand color(0-4) 0-yellow, 1-green, 2-orange, 3-red, 4- blue
 		this.tShape = rnd.nextInt(2); //set random shape(0-1)
 		this.tColor = rnd.nextInt(5); //set random color(0-4)
-		//tShape = 1; //default shape(square)
-		//tColor = 4;//default color(blue)
 	}//end tile
 	
 	public void setOverRide(){
