@@ -35,7 +35,7 @@ public class Tile{
 			this.tColor = 2;//orange
 		} else if(c == 3){
 			this.tColor = 3;//red
-		} else if(c == 4){
+		} else if(c >= 4){
 			this.tColor = 4;//blue
 		}//end if
 	}//end setTcolor
@@ -44,7 +44,7 @@ public class Tile{
 	public Tile(){
 		Random rnd = new Random();//rand color(0-4) 0-yellow, 1-green, 2-orange, 3-red, 4- blue
 		this.tShape = rnd.nextInt(2); //set random shape(0-1)
-		this.tColor = rnd.nextInt(4); //set random color(0-4)
+		this.tColor = rnd.nextInt(5); //set random color(0-4)
 		//tShape = 1; //default shape(square)
 		//tColor = 4;//default color(blue)
 	}//end tile
@@ -52,7 +52,7 @@ public class Tile{
 	public void setOverRide(){
 		Random rnd = new Random();//rand color(0-4) 0-yellow, 1-green, 2-orange, 3-red, 4- blue
 		this.tShape = rnd.nextInt(2); //set random shape(0-1)
-		this.tColor = rnd.nextInt(4); //set random color(0-4)
+		this.tColor = rnd.nextInt(5); //set random color(0-4)
 	}//end override
 	public Tile(int s, int c){
 		setTShape(s); //shape 
