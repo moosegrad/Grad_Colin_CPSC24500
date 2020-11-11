@@ -22,6 +22,7 @@ class SlotMachineFrame extends JFrame{
 	public void setupMenu() {
 		JMenuBar mbar = new JMenuBar();
 		JMenu mnuFile = new JMenu("File"); //tab at top
+
 		JMenuItem miLoad = new JMenuItem("Load Tiles");
 		miLoad.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -55,31 +56,23 @@ class SlotMachineFrame extends JFrame{
 			}
 		});
 		mnuFile.add(miSave);
-		//print
 		JMenuItem miPrint = new JMenuItem("Print");
 		mnuFile.add(miPrint);
-		//restart
 		JMenuItem miRestart = new JMenuItem("Restart");
 		mnuFile.add(miRestart);
-		//exit
-		JMenuItem miExit = new JMenuItem("Exit");
-		miExit.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				System.exit(0);
-			}
-		});
-		mnuFile.add(miExit);
-		mbar.add(mnuFile);
 		JMenu mnuHelp = new JMenu("Help");
 		JMenuItem miAbout = new JMenuItem("About");
 		miAbout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "Application created by Colin !");
+				JOptionPane.showMessageDialog(null,"Colin");
 			}
 		});
 		mnuHelp.add(miAbout);
+		mbar.add(mnuFile);
 		mbar.add(mnuHelp);
 		setJMenuBar(mbar);
+		//print
+
 	}
 	//setUpLook modiefied from class
 	public void setupLook(){
@@ -112,6 +105,7 @@ class SlotMachineFrame extends JFrame{
 	}//end setupLook
 	//class
 	public SlotMachineFrame(){
+		//setupMenu();
 		setupLook(); //call fucntion
 		setDefaultCloseOperation(EXIT_ON_CLOSE); //default close operation
 		
