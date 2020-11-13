@@ -39,7 +39,7 @@ public class Tile{
 			this.tColor = 4;//blue
 		}//end if
 	}//end setTcolor
-	//deafult param for Tile
+	//setter for left
 	
 	public Tile(){
 		Random rnd = new Random();//rand color(0-4) 0-yellow, 1-green, 2-orange, 3-red, 4- blue
@@ -56,6 +56,13 @@ public class Tile{
 		setTShape(s); //shape 
 		setTColor(c); //color
 	}//end tile
+	/**
+	 * override fucntion
+	 */
+	@Override
+	/**
+	 * @return a string to a file 
+	 */
 	public String toString() {
 		//return foramt
 			return String.format("%d %d", tShape, tColor);

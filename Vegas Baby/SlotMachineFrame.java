@@ -17,6 +17,12 @@ import javax.swing.JTextField;
 import java.awt.*;
 import javax.swing.*;
 //modified from class code
+/**
+ * TYhis fucntion creates the menu options for the user
+ * takes in the user choice from those options 
+ * saves tiles, read tiles, restart(Clear for now), exit
+ * sets border constraints.
+ */
 class SlotMachineFrame extends JFrame{
 	private TilePanel pan;
 	public void setupMenu() {
@@ -29,13 +35,15 @@ class SlotMachineFrame extends JFrame{
 				TileReader dr = new TileReader();
 				JFileChooser jfc = new JFileChooser();
 				if (jfc.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
-					ArrayList<Tile> tilesRead = dr.readFromText(jfc.getSelectedFile());
+					ArrayList<Tile> tilesRead = dr.read(jfc.getSelectedFile());
 					if (tilesRead == null) {
 						JOptionPane.showMessageDialog(null,"Could not read Tiles from file.");
 					} else {
+						//pan.clearTiles(); /used for debugging
 						pan.setTiles(tilesRead);
 						repaint();
 					}
+					//repaint();
 				}
 			}
 		});
@@ -46,7 +54,7 @@ class SlotMachineFrame extends JFrame{
 				JFileChooser jfc = new JFileChooser();
 				TileWriter dw = new TileWriter();
 				if (jfc.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) { // the user wants to go ahead
-					if (dw.writeToText(jfc.getSelectedFile(), pan.getTiles())) {
+					if (dw.write(jfc.getSelectedFile(), pan.getTiles())) {
 						JOptionPane.showMessageDialog(null,"Wrote Tiles to file.");
 					} else {
 						JOptionPane.showMessageDialog(null,"Could not write Tiles to file.");
@@ -58,13 +66,27 @@ class SlotMachineFrame extends JFrame{
 		mnuFile.add(miSave);
 		JMenuItem miPrint = new JMenuItem("Print");
 		mnuFile.add(miPrint);
+		//restart
 		JMenuItem miRestart = new JMenuItem("Restart");
+		miRestart.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				pan.clearTiles();
+				repaint();
+			}
+		});
 		mnuFile.add(miRestart);
+		JMenuItem miExit = new JMenuItem("Exit");
+		miExit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+			}
+		});
+		mnuFile.add(miExit);
 		JMenu mnuHelp = new JMenu("Help");
 		JMenuItem miAbout = new JMenuItem("About");
 		miAbout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null,"Colin");
+				JOptionPane.showMessageDialog(null,"Colin Grad - https://github.com/moosegrad/Grad_Colin_CPSC24500");
 			}
 		});
 		mnuHelp.add(miAbout);
@@ -75,7 +97,11 @@ class SlotMachineFrame extends JFrame{
 
 	}
 	//setUpLook modiefied from class
+	/**
+	 * this fucniton sets the bounds, jButtoms and the jTextField 
+	 */
 	public void setupLook(){
+		
 		//         L   t   w   h
 		setBounds(100,100,800,400); //top, left
 		setTitle("Vegas Baby Slot Machine"); //left, top, width, height
@@ -97,13 +123,17 @@ class SlotMachineFrame extends JFrame{
 		panSouth.add(btnMin);
 		//jLabel
 		panSouth.add(new JLabel("$"));
-		JTextField txtSize = new JTextField(6);
+		JTextField txtSize = new JTextField(8);
+		txtSize.setText("5.00");
 		panSouth.add(txtSize);
 		//add pansouth
 		c.add(panSouth,BorderLayout.SOUTH);
 		setupMenu();
 	}//end setupLook
 	//class
+	/**
+	 * sets the setUplook fucntion and the default close operation
+	 */
 	public SlotMachineFrame(){
 		//setupMenu();
 		setupLook(); //call fucntion

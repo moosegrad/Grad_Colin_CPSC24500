@@ -18,6 +18,10 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+/**
+ * sets the visability and also runs the program
+ * this also sets the frame through SlotMachineFrame
+ */
 public class SlotMachineApp{
 	public static void main(String[] args) {
 		SlotMachineFrame frm = new SlotMachineFrame(); //create frame
