@@ -10,6 +10,7 @@ public class Tile implements Serializable {
 	private static final String[] shapes = {"circle","square"};
 	private int color; //0 - yellow, 1 - green, 2 - orange, 3 - red, 4 - blue
 	private int shape; // 0 - circle, 1 - square, 2 - diamond
+	int scCounter, c, s;
 	//default
 	public Tile() {
 		color = 3;
@@ -46,12 +47,19 @@ public class Tile implements Serializable {
 		}
 	}
 	/**
-	 * randomizes the colors and shapes
+	 * randomizes the colors and shapes 100 times ans sets random color/shape
 	 * @param rnd
 	 */
 	public void setRandomly(Random rnd) {
-		color = rnd.nextInt(colors.length);
-		shape = rnd.nextInt(shapes.length);
+		while(scCounter != 100){
+			c = rnd.nextInt(colors.length);
+			s = rnd.nextInt(shapes.length);
+			scCounter +=1;
+		}
+		color = c;
+		shape = s;
+		//color = rnd.nextInt(colors.length);
+		//shape = rnd.nextInt(shapes.length);
 	}
 	/**
 	 * gets the actual color by calling the array and setting it to the arrays value for that int
