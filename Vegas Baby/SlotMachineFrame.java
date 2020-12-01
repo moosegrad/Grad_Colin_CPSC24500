@@ -16,6 +16,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import java.awt.*;
 import javax.swing.*;
+import java.awt.print.*;
 //modified from class code
 /**
  * TYhis fucntion creates the menu options for the user
@@ -25,6 +26,8 @@ import javax.swing.*;
  */
 class SlotMachineFrame extends JFrame{
 	private TilePanel pan;
+	private JTextField txtBalance;
+	private JButton btnMax, btnMid, btnMin;
 	public void setupMenu() {
 		JMenuBar mbar = new JMenuBar();
 		JMenu mnuFile = new JMenu("File"); //tab at top
@@ -70,8 +73,8 @@ class SlotMachineFrame extends JFrame{
 		JMenuItem miRestart = new JMenuItem("Restart");
 		miRestart.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				pan.clearTiles();
-				repaint();
+				//pan.clearTiles();
+				//repaint();
 			}
 		});
 		mnuFile.add(miRestart);
@@ -122,11 +125,15 @@ class SlotMachineFrame extends JFrame{
 		JButton btnMin = new JButton("Min");
 		panSouth.add(btnMin);
 		//jLabel
-		panSouth.add(new JLabel("$"));
-		JTextField txtSize = new JTextField(8);
-		txtSize.setText("5.00");
-		panSouth.add(txtSize);
-		//add pansouth
+		
+		//panSouth.add(new JLabel("$"));
+		JLabel lblBalance = new JLabel("$"); //create jlabel
+		panSouth.add(lblBalance);
+		txtBalance = new JTextField(6);
+		txtBalance.setEditable(false);
+		//txtBalance.setText(String.format("%0.2f",5));
+		panSouth.add(txtBalance);
+	
 		c.add(panSouth,BorderLayout.SOUTH);
 		setupMenu();
 	}//end setupLook
