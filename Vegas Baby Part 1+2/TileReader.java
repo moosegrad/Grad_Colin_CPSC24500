@@ -5,12 +5,24 @@ import java.io.ObjectInputStream;
 import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.Scanner;
-
+/**
+ * reads in the files that is choosen in the correst format
+ */
 public class TileReader {
+	/**
+	 * gets tht file name
+	 * @param fname
+	 * @return
+	 */
 	public ArrayList<Tile> readFromText(String fname) {
 		File f = new File(fname);
 		return readFromText(f);
 	}
+	/**
+	 * reads the lines in a txt formated file
+	 * @param f
+	 * @return
+	 */
 	public ArrayList<Tile> readFromText(File f) {
 		try {
 			ArrayList<Tile> tilesRead = new ArrayList<Tile>();
@@ -34,10 +46,20 @@ public class TileReader {
 						  
 		}
 	}
+	/**
+	 * receives the filename if the file is a binary file
+	 * @param fname
+	 * @return
+	 */
 	public ArrayList<Tile> readFromBinary(String fname) {
 		File f = new File(fname);
 		return readFromBinary(f);
 	}
+	/**
+	 * reads the contents of the file by decovind it in a binary format
+	 * @param f
+	 * @return
+	 */
 	public ArrayList<Tile> readFromBinary(File f) {
 		try {
 			ArrayList<Tile> tilesRead;
@@ -49,10 +71,20 @@ public class TileReader {
 			return null;
 		}
 	}
+	/**
+	 * gets the file anme if the file is .XML
+	 * @param fname
+	 * @return
+	 */
 	public ArrayList<Tile> readFromXML(String fname) {
 		File f = new File(fname);
 		return readFromXML(f);
 	}
+	/**
+	 * decodes the file from XMl and reads in the date 
+	 * @param f
+	 * @return
+	 */
 	public ArrayList<Tile> readFromXML(File f) {
 		try {
 			ArrayList<Tile> tilesRead;
@@ -65,10 +97,21 @@ public class TileReader {
 			return null;
 		}
 	}
+	/**
+	 * receives file name for the read class
+	 * @param fname
+	 * @return
+	 */
 	public ArrayList<Tile> read(String fname) {
 		File f = new File(fname);
 		return read(f);
 	}
+	/**
+	 * determins what readFrom class to call based on extension
+	 * i.e. txt, binary, xml
+	 * @param f
+	 * @return
+	 */
 	public ArrayList<Tile> read(File f) {
 		try {
 			String fname = f.getName().toUpperCase();
