@@ -98,6 +98,12 @@ public class SlotMachineFrame extends JFrame {
 				repaint();
 			}
 		});
+		//exit action listener
+		miExit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+			}
+		});
 		//adds file options
 		mnuFile.add(miLoad);
 		mnuFile.add(miSave);
