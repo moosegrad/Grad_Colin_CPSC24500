@@ -46,7 +46,7 @@ public class QuizApp{
         //File fname = new File("questions_without_answers.json");
         ArrayList<Question> questions = new ArrayList<Question>();
         //String fname = "questions_without_answers.json";
-        String path = "/Users/colingrad/Documents/GitHub/Grad_Colin_CPSC24500/Oop_Thoery_Questions/questions.json";
+        String path = "questions.json";
         int choice; //place holder for choice from scanner i.e user
         boolean goAhead = true; // boolean for if statment 
         Scanner sc = new Scanner(System.in); //scanner for input data 

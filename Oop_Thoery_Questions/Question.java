@@ -56,7 +56,7 @@ public class Question{
     public String getAnswer(){
         return answer;
     }
-    public Question(String question, String a, String b, String c, String d, String Answer){
+    public Question(String question, String a, String b, String c, String d, String answer){
         setQuestion(question);
         setA(a);
         setB(b);

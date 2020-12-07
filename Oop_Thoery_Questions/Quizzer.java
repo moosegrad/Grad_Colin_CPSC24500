@@ -7,17 +7,16 @@ public class Quizzer{
         String aC;
         int qNum = c;
         int counter = 0;
-        //Question question;
         Scanner sc = new Scanner(System.in);
-        ArrayList<Question> questions2 = (ArrayList<Question>)questions;
-		Collections.shuffle(questions);
+        Collections.shuffle(questions);
         for (Question question : questions){
+            //if(goAhead == true){
+            System.out.println(question);
             while(counter != qNum){
-                System.out.println(question);
                 System.out.print("Enter the letter of your choice: ");
                 aC = sc.nextLine().trim();
                 String answer = question.viewAnswer();
-                if(aC == answer){
+                if(aC.equals(answer)){
                     System.out.println("Correct!");
                     counter += 1;
                 }else if(aC != answer){
@@ -26,6 +25,7 @@ public class Quizzer{
                     counter += 1;
                 }
             }
-        }
+        //}
+     }   
     }
 }
