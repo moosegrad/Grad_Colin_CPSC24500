@@ -7,13 +7,22 @@ import java.util.Iterator;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-
+/**
+ * This class allows the program to read in data from a JSON Dodument
+ */
 public class QuestionReader{
+    /**
+     * This will allows the program to Take out the Questions, 
+     * options for a-d and the answer from thr json docuemnt
+     * concatinated the arraylist
+     * @param fname
+     * @return
+     */
     public ArrayList<Question>  readFromJSON(String fname){
         ArrayList<Question> questions = new ArrayList<Question>(); //create array
         //ArrayList<Question> questions2 = new ArrayList<Question>(); //create array
        
-        String question, a, b, c, d, answer;
+        String question, a, b, c, d, answer; //vartiables for the values to be held
         try{
             FileReader reader = new FileReader(new File(fname));
             JSONParser parser = new JSONParser();
@@ -37,5 +46,5 @@ public class QuestionReader{
             return null; //return null value if try fails
         } //end try catch
     
-    }//end program
-}
+    }//end main
+}//end program 
