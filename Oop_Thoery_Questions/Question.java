@@ -64,8 +64,15 @@ public class Question{
         setD(d);
         setAnswer(answer);
     }
+    public Question(String answer, String question){
+        setAnswer(answer);
+        setQuestion(question);
+    }
     public String viewAnswer(){
         return String.format("%s", answer);
+    }
+    public String viewQuestion(){
+        return String.format("%s", question);
     }
     /**
      * formats the string to be printed 
@@ -73,5 +80,8 @@ public class Question{
      */
     public String toString(){
         return String.format("%s\nA. %s\nB. %s\nC. %s\nD. %s\n", question, a, b,c, d);
+    }
+    public String tooString(){
+        return String.format("%s $s\n", answer, question);
     }
 }
