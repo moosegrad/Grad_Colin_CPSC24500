@@ -1,5 +1,8 @@
 /**
  * OOP theory and concept QUestions
+ * @author Colin Grad
+ * @version 1.3
+ * @date 12/07/2020
 */
 //import
 import java.util.Scanner; //scanner tool that allows to read in data
